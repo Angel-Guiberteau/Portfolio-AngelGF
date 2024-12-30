@@ -444,6 +444,9 @@ hr{
     gap: 1rem;
 }
 
+.less{
+    margin-top: -4rem;
+}
 /* FOOTER */
 
 footer {

@@ -438,6 +438,12 @@ hr{
     transform: scale(1.05);
 }
 
+.project-links{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 /* FOOTER */
 
 footer {
@@ -513,6 +519,7 @@ footer {
     background-color: var(--darker-blue-color);
     color: var(--white-color);
 }
+
 
 /* Media Queries */
 

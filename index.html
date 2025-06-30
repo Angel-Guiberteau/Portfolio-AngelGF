@@ -1,201 +1,358 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- FavIcon -->
-        <link rel="icon" type="image/png" href="assets/img/icon.ico">
-        <!-- Styles -->
-        <link rel="stylesheet" href="assets/styles/normalize.css"> 
-        <link rel="stylesheet" href="assets/styles/style.css">
-        <title>ÁngelGF - Portfolio</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/png" href="assets/img/icon.ico" />
+        <title>Portfolio - Ángel GF</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="assets/styles/style.css" />
+        <style>
+
+            #particles-js {
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                top: 0; left: 0;
+                z-index: 0;
+                background: #000000;
+            }
+
+            #particles-js > canvas {
+                width: 100% !important;
+                height: 100% !important;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                pointer-events: auto; 
+                mix-blend-mode: screen;
+                z-index: 0;
+            }
+
+            /* @keyframes gradientBG {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            } */
+
+            .hero-section {
+                position: relative;
+                z-index: 1; 
+                min-height: 100vh;
+                padding: 60px 20px;
+                backdrop-filter: blur(1px);
+                -webkit-backdrop-filter: blur(1px);
+                background: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0.39),
+                    rgba(255,255,255,0.07),
+                    rgba(28, 201, 184, 0.17)
+                );
+            }
+
+            .highlight {
+                background: linear-gradient(
+                    to right,
+                    rgb(28, 201, 184),
+                    rgba(255, 255, 255, 0.765)
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+            }
+
+            .highlight-alt {
+                color: #1cc9b7;
+            }
+
+            .btn-custom {
+                position: relative;
+                background-color: #12a59b;
+                color: #fff;
+                padding: 12px 25px;
+                font-size: 1rem;
+                border: 2px solid transparent; 
+                border-radius: 1rem;
+                box-shadow: 0 4px 20px rgba(18, 165, 155, 0.4);
+                z-index: 1;
+                overflow: hidden;
+                transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .btn-custom::before {
+                content: "";
+                position: absolute;
+                top: -3px;
+                left: -3px;
+                right: -3px;
+                bottom: -3px;
+                background: linear-gradient(270deg, #12a59b, #0a544c, #12a59b);
+                background-size: 600% 600%;
+                z-index: -1;
+                border-radius: inherit;
+                animation: animatedBorder 5s linear infinite;
+            }
+
+            .btn-custom:hover {
+                background-color: #0e6d65;
+                transform: scale(1.03);
+                box-shadow: 0 6px 25px rgba(18, 165, 155, 0.6);
+                color: #fff;
+                font-style: italic;
+            }
+
+            @keyframes animatedBorder {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            .border-custom {
+                border: 2px solid #1cc9b7;
+                padding: 8px 20px;
+                margin-left: 20px;
+                border-radius: 1rem;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            .span-custom {
+                color: #1cc9b7;
+                font-weight: bold;
+                font-style: italic;
+            }
+            
+            @media (max-width: 991.98px) {
+                .navbar-collapse {
+                    background: rgba(0, 0, 0, 0.9); 
+                    border-radius: 0.5rem;
+                    padding: 1rem;
+                    margin-top: 10px;
+                    z-index: 10;
+                }
+
+                .navbar-nav .nav-item {
+                    margin-bottom: 0.5rem;
+                }
+
+                .navbar-collapse.show {
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+                }
+
+                .navbar-toggler {
+                    outline: none;
+                }
+
+                .navbar-toggler-icon {
+                    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255%2C255%2C255%2C1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+                }
+            }
+
+            .about-section {
+                position: relative;
+                z-index: 1; 
+                color: #c8f2ef;
+                padding: 60px 20px;
+            }
+        </style>
+        
     </head>
     <body>
-        <header>
-            <div id="navbar">
-                <h1>Ángel<span>GF</span></h1>
-                <nav>
-                    <a href="#navbar">Home</a>
-                    <a href="#About">About</a>
-                    <a href="#proyects-intro">Proyects</a>
-                    <button id="dark-mode-toggle" class="modo-oscuro-toggle">
-                        🌙
-                    </button>
-                </nav>
-            </div>
-        </header>
-        <main>
-            <section id="intro">
-                <div class="intro-img-container">
-                    <img src="assets/img/me.jpg" alt="foto de perfil">
-                    <ul class="example-2">
-                        <li class="icon-content">
-                            <a href="https://www.linkedin.com/in/%C3%A1ngel-guiberteau-franco-84a827311/" aria-label="LinkedIn" data-social="linkedin" target="_blank">
-                                <div class="filled"></div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" fill="currentColor"></path>
-                                </svg>
+
+        <div id="particles-js"></div>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top glass-navbar py-2 px-3 ">
+            <div class="container-fluid">
+                <a class="navbar-brand font-weight-bold text-white" href="#">
+                    Angel<span class="span-custom">GF</span>
+                </a>
+                <button class="navbar-toggler border-0 text-white" type="button" data-toggle="collapse" data-target="#nav-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="nav-collapse">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom d-flex align-items-center" href="#about" style="white-space: nowrap;">
+                                Sobre mí
                             </a>
-                            <div class="tooltip">LinkedIn</div>
                         </li>
-                        <li class="icon-content">
-                            <a href="https://github.com/Angel-Guiberteau" aria-label="GitHub" data-social="github" target="_blank">
-                                <div class="filled"></div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" fill="currentColor"></path>
-                                </svg>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom d-flex align-items-center" href="#work" style="white-space: nowrap;">
+                                Proyectos
                             </a>
-                            <div class="tooltip">GitHub</div>
                         </li>
-                        <li class="icon-content">
-                            <a href="https://www.instagram.com/angel_99sk/" aria-label="Instagram" data-social="instagram" target="_blank">
-                                <div class="filled"></div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217z" fill="currentColor"></path>
-                                </svg>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom d-flex align-items-center" href="#contact" style="white-space: nowrap;">
+                                Contacto
                             </a>
-                            <div class="tooltip">Instagram</div>
                         </li>
-                    </ul>
-                </div>
-                <div class="intro-text-container">
-                    <h2>Hi, I'm <span class="blue-text">Ángel Guiberteau</span></h2>
-                    <p>
-                        A skilled web developer, crafting and managing websites and web applications to ensure the success of the entire product with finesse.
-                    </p>
-                    <div class="intro-button-container">
-                        <a href="#proyects-intro" id="button-proyects">Proyects</a>
-                        <a href="assets/descargas/CV.pdf" id="button-proyects">CV</a>
-                    </div>
-                </div>
-            </section>
-            <section id="About">
-                <div class="about-intro">
-                    <h2>About me</h2>
-                    <hr>
-                    <p>
-                        Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology.
-                    </p>
-                </div>
-                <div class="about-content-container">
-                    <div class="know-about-container">
-                        <h3>Know About Me</h3>
-                        <p>
-                            I am a web developer with a passion for creating and managing websites and web applications. I have experience in programming languages such as JavaScript, Java, C, Laravel, HTML, CSS, Bootstrap, and SQL. I am also a student of the Higher Degree in Web Application Development.
-                        </p>
-                    </div>
-                    <div class="skills-container">
-                        <h3>My Skills</h3>
-                        <div class="skills">
-                            <button class="skill-btn">Laravel</button>
-                            <button class="skill-btn">Bootstrap</button>
-                            <button class="skill-btn">Java</button>
-                            <button class="skill-btn">C</button>
-                            <button class="skill-btn">HTML</button>
-                            <button class="skill-btn">JavaScript</button>
-                            <button class="skill-btn">CSS</button>
-                            <button class="skill-btn">SQL</button>
-                        </div>
-                    </div>
-                </div>
-            </section>   
-            <section>
-                <div id="proyects-intro">
-                    <h2>Proyects</h2>
-                    <hr>
-                </div>
-                <div class="proyect-container">
-                    <div class="proyect">
-                        <img src="assets/img/espejo.jpg" alt="Tu Espejo Perfecto">
-                        <div class="proyect-text">
-                            <h3>TuEspejoPerfecto</h3>
-                            <p>
-                                In the summer, my partner and I tried to launch our first venture on Amazon. We searched for a specific niche, and eventually, we chose mirrors. We learned how to use WordPress and researched hosting and SEO to do a good job.
-                            </p>
-                            <div class="project-links">
-                                <a href="https://tuespejoperfecto.com/" target="_blank">View Project</a>
-                                <a href="https://github.com/ferferjose">My partner</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="proyect-container">
-                    <div class="proyect">
-                        <img src="assets/img/logoDemocratic.jpeg" alt="Tu Espejo Perfecto">
-                        <div class="proyect-text">
-                            <h3 class="less">Democratic-City</h3>
-                            <p>    
-                        Democratic CITY is a class project designed to raise awareness about democratic participation. Developed with PHP and JavaScript, it includes a fully developed admin section and the game itself, utilizing regular polling for room creation, question detection, and interaction between users and the host. This project helped strengthen skills in collaboration, organization, and secure database development using PDO.
-                            </p>
-                            <div class="project-links">
-                                <a href="https://26.2daw.esvirgua.com/game/" target="_blank">View Project</a>
-                                <a href="https://github.com/Angel-Guiberteau/ABP-DemocraticCity" target="_blank" class="margin">View Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="proyect-container">
-                    <div class="proyect">
-                        <img src="assets/img/pokeAPI.png" alt="Tu Espejo Perfecto">
-                        <div class="proyect-text">
-                            <h3>Poke API</h3>
-                            <p>
-                                As part of a class project, I created a PokéAPI to learn how to work with APIs and manage data effectively. This project helped me deepen my understanding of RESTful API design, handle HTTP requests, and present dynamic information interactively. It was an excellent opportunity to strengthen my backend development abilities in a practical context.
-                            </p>
-                            <div class="project-links">
-                                <a href="https://angel-guiberteau.github.io/PokeAPI/" target="_blank">View Project</a>
-                                <a href="https://github.com/Angel-Guiberteau/PokeAPI" target="_blank" class="margin">View Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </section>        
-        </main>
-        <footer>
-            <div class="footer-container">
-                <div class="footer-text">
-                    <h2>Angel Guiberteau</h2>
-                    <p>
-                        As a web developer, I specialize in crafting the user-facing aspects of websites and web applications, contributing to the overall success of the product.
-                    </p>
-                </div>
-                <div class="footer-social">
-                    <h2>Social</h2>
-                    <ul class="example-2">
-                        <li class="icon-content">
-                            <a href="https://www.linkedin.com/in/%C3%A1ngel-guiberteau-franco-84a827311/" aria-label="LinkedIn" data-social="linkedin" target="_blank">
-                                <div class="filled"></div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" fill="currentColor"></path>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom d-flex align-items-center border-custom" href="assets/descargas/Angel-Cv.pdf" download style="white-space: nowrap;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download mr-2" aria-hidden="true" style="vertical-align: middle;">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" x2="12" y1="15" y2="3"></line>
                                 </svg>
+                                Descargar <span class="d-none d-md-inline ml-1">CV</span>
                             </a>
-                            <div class="tooltip">LinkedIn</div>
-                        </li>
-                        <li class="icon-content">
-                            <a href="https://github.com/Angel-Guiberteau" aria-label="GitHub" data-social="github" target="_blank">
-                                <div class="filled"></div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" fill="currentColor"></path>
-                                </svg>
-                            </a>
-                            <div class="tooltip">GitHub</div>
-                        </li>
-                        <li class="icon-content">
-                            <a href="https://www.instagram.com/angel_99sk/" aria-label="Instagram" data-social="instagram" target="_blank">
-                                <div class="filled"></div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217z" fill="currentColor"></path>
-                                </svg>
-                            </a>
-                            <div class="tooltip">Instagram</div>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="made">
-                <p>©Copyright 2024. Made by Angel Guiberteau <a href="#navbar" class="come">Come back</a></p>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section d-flex align-items-center justify-content-center flex-column text-center">
+            <h1 class="display-4 font-weight-bold mb-3 text-white">
+                Construyo Productos Donde <br>
+                <span class="highlight">la Lógica se encuentra con el Código</span>
+            </h1>
+            <p class="lead mb-3 text-light">
+                Apasionado desarrollador full stack, combinando frameworks modernos y diseño de APIs para crear aplicaciones web eficientes y fáciles de usar.<br>
+                Experiencia real en proyectos colaborativos y liderazgo técnico.
+            </p>
+            <p class="mb-4 font-weight-bold" style="color: #1cc9b7; font-size: 1.5rem;">
+                <span class="highlight">Construir. Aprender. Optimizar. Repetir.</span>
+            </p>
+            <a href="#projects" class="btn btn-custom btn-lg">Explorar mi trabajo</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section d-flex align-items-center justify-content-center text-center">
+            <div class="container">
+                <h2 class="about-title">
+                    <span class="highlight">Sobre mí</span>
+                </h2>
+                <p class="about-text">
+                Soy estudiante de desarrollo Full Stack con pasión por la programación limpia y los sistemas complejos.<br>
+                Actualmente estoy construyendo <strong>proyectos personales</strong> que mezclan <strong>código</strong>, <strong>finanzas</strong> y <strong>diseño funcional</strong>.
+                </p>
+                <a href="#contact" class="btn-about">Más sobre mí</a>
             </div>
-        </footer>
-        <script src="assets/scripts/DarkMode.js"></script>
+        </section>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            const particlesConfig = {
+                "particles": {
+                    "number": { 
+                    "value": 100, 
+                        "density": { "enable": true, "value_area": 1600 }
+                    },
+                    "color": { 
+                        "value": ["#16DECA"] 
+                    },
+                    "shape": { 
+                        "type": ["circle"], 
+                        "stroke": { "width": 0, "color": "#000" } 
+                    },
+                    "opacity": {
+                        "value": 0.7,
+                        "random": true,
+                        "anim": { 
+                            "enable": false
+                        }
+                    },
+                    "size": {
+                        "value": 5,
+                        "random": true,
+                        "anim": { 
+                            "enable": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 160,
+                        "color": "#1cc9b7",
+                        "opacity": 0.4,
+                        "width": 1.5
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": { "enable": false }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": { "enable": true, "mode": ["grab", "repulse"] },
+                        "onclick": { "enable": true, "mode": "push" },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": { "distance": 140, "line_linked": { "opacity": 0.4 } },
+                        "repulse": { "distance": 70, "duration": 1.2 },
+                        "push": { "particles_nb": 4 }
+                    }
+                },
+                    "retina_detect": true
+            };
+
+            function initParticles() {
+                particlesJS("particles-js", particlesConfig);
+            }
+
+            let resizeTimeout;
+                window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    if (window.pJSDom && window.pJSDom.length) {
+                    window.pJSDom[0].pJS.fn.vendors.destroypJS();
+                    window.pJSDom = [];
+                    }
+                    initParticles();
+                }, 300);
+            });
+
+            window.addEventListener('load', () => { 
+                initParticles();
+
+                const checkParticlesReady = () => {
+                    if (window.pJSDom && window.pJSDom.length > 0) {
+                    const pJS = window.pJSDom[0].pJS;
+
+                    window.addEventListener('mousemove', (e) => {
+                        const canvasRect = pJS.canvas.el.getBoundingClientRect();
+
+                        const posX = e.clientX - canvasRect.left;
+                        const posY = e.clientY - canvasRect.top;
+
+                        pJS.interactivity.mouse.pos_x = posX;
+                        pJS.interactivity.mouse.pos_y = posY;
+                        pJS.interactivity.status = "mousemove";
+                    });
+
+                    window.addEventListener('mouseout', () => {
+                        pJS.interactivity.mouse.pos_x = null;
+                        pJS.interactivity.mouse.pos_y = null;
+                        pJS.interactivity.status = "mouseleave";
+                    });
+
+                    } else {
+                    setTimeout(checkParticlesReady, 100);
+                    }
+                };
+                checkParticlesReady();
+            });
+        </script>
     </body>
 </html>

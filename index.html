@@ -16,7 +16,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg fixed-top glass-navbar py-2 px-3 ">
             <div class="container-fluid">
-                <a class="navbar-brand font-weight-bold text-white" href="#">
+                <a class="navbar-brand font-weight-bold text-white" href="#hero">
                     Angel<span class="span-custom">GF</span>
                 </a>
                 <button class="navbar-toggler border-0 text-white" type="button" data-toggle="collapse" data-target="#nav-collapse">
@@ -54,33 +54,143 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
-        <section class="hero-section d-flex align-items-center justify-content-center flex-column text-center">
-            <h1 class="display-4 font-weight-bold mb-3 text-white">
-                Construyo Productos Donde <br>
-                <span class="highlight">la Lógica se encuentra con el Código</span>
-            </h1>
-            <p class="lead mb-3 text-light">
-                Apasionado desarrollador full stack, combinando frameworks modernos y diseño de APIs para crear aplicaciones web eficientes y fáciles de usar.<br>
-                Experiencia real en proyectos colaborativos y liderazgo técnico.
-            </p>
-            <p class="mb-4 font-weight-bold" style="color: #1cc9b7; font-size: 1.5rem;">
-                <span class="highlight">Construir. Aprender. Optimizar. Repetir.</span>
-            </p>
-            <a href="#projects" class="btn btn-custom btn-lg">Explorar mi trabajo</a>
+       <!-- Hero Section -->
+        <section class="hero-section d-flex align-items-center justify-content-center text-center" id="hero">
+            <div class="container px-4">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-12">
+                        <h1 class="hero-title font-weight-bold mb-3 text-white text-break">
+                            Construyo Productos Donde <br>
+                            <span class="highlight">la Lógica se encuentra con el Código</span>
+                        </h1>
+                        <p class="hero-subtitle mb-3 text-light">
+                            Desarrollador full stack centrado en Laravel, diseño funcional y APIs limpias para soluciones web prácticas y escalables.
+                        </p>
+                        <p class="hero-subtitle mb-3 text-light">
+                            Experiencia real en proyectos colaborativos y liderazgo técnico.
+                        </p>
+                        <p class="mb-4 font-weight-bold hero-slogan text-highlight-alt">
+                            <span class="highlight">Construir. Aprender. Optimizar. Repetir.</span>
+                        </p>
+                        <a href="#projects" class="btn btn-custom btn-lg">Explorar mi trabajo</a>
+                    </div>
+                </div>
+            </div>
         </section>
+
 
         <!-- About Section -->
         <section id="about" class="about-section d-flex align-items-center justify-content-center text-center">
             <div class="container">
                 <h2 class="about-title">
-                    <span class="highlight">Sobre mí</span>
+                    <span class="highlight highlight-title">Sobre mí</span>
                 </h2>
                 <p class="about-text">
-                Soy estudiante de desarrollo Full Stack con pasión por la programación limpia y los sistemas complejos.<br>
-                Actualmente estoy construyendo <strong>proyectos personales</strong> que mezclan <strong>código</strong>, <strong>finanzas</strong> y <strong>diseño funcional</strong>.
+                    Soy técnico superior en desarrollo de aplicaciones web, apasionado por crear código limpio y resolver retos complejos.<br>
+                    Actualmente desarrollo <strong>proyectos personales</strong> que integran <strong>programación</strong>, <strong>finanzas</strong> y <strong>diseño funcional</strong>, enfocándome en soluciones prácticas y escalables.
                 </p>
                 <a href="#contact" class="btn-about">Más sobre mí</a>
+            </div>
+        </section>
+                
+        <!-- Work Section -->
+        <section id="projects" class="projects-section py-5">
+            <div class="container text-center">
+                <h2 class="mb-4 highlight highlight-title">Proyectos Destacados</h2>
+                <div class="row justify-content-center row-custom">
+
+                    <!-- Proyecto 1 -->
+                    <div class="col-md-6 col-lg-4 mb-4 project-col">
+                        <div class="project-card p-4">
+                            <hr class="line-custom">
+                            <h3 class="project-title">💰 Rivo 💰</h3>
+                            <div class="project-content"> <!-- Nuevo contenedor para la descripción y las etiquetas -->
+                                <p class="project-description">App de finanzas personales que ayuda a los usuarios a controlar sus ingresos, gastos y ahorros.</p>
+                                <div class="project-tags d-flex flex-wrap">
+                                    <span class="tag">Laravel</span>
+                                    <span class="tag">Bootstrap</span>
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">MySQL</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-project mt-3">Ver Proyecto</a>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2 -->
+                    <div class="col-md-6 col-lg-4 mb-4 project-col">
+                        <div class="project-card p-4">
+                            <hr class="line-custom">
+                            <h3 class="project-title">📚 Gestor de cursos 📚</h3>
+                            <div class="project-content"> <!-- Nuevo contenedor para la descripción y las etiquetas -->
+                                <p class="project-description">Una plataforma web privada creada para THB Hotels para gestionar los programas de formación interna y el desarrollo de los empleados.</p>
+                                <div class="project-tags d-flex flex-wrap">
+                                    <span class="tag">Laravel</span>
+                                    <span class="tag">Bootstrap</span>
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">MySQL</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-project mt-3">Ver Proyecto</a>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 3 -->
+                    <div class="col-md-6 col-lg-4 mb-4 project-col">
+                        <div class="project-card p-4">
+                            <hr class="line-custom">
+                            <h3 class="project-title">🏛️ Democratic City 🏛️</h3>
+                            <div class="project-content"> <!-- Nuevo contenedor para la descripción y las etiquetas -->
+                                <p class="project-description">Juego multijugador en navegador donde las decisiones colectivas afectan a la ciudad, buscando mantenerla viva el mayor tiempo posible.</p>
+                                <div class="project-tags d-flex flex-wrap">
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">Fetch API</span>
+                                    <span class="tag">HTML/CSS</span>
+                                    <span class="tag">JSON</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-project mt-3">Ver Proyecto</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Section -->
+
+        <!-- Tech Stack Section -->
+        <section id="tech-stack" class="tech-section py-5">
+            <div class="container text-center">
+                <h2 class="mb-4 highlight highlight-title">Tech Stack</h2>
+                <div class="tech-carousel-wrapper">
+                    <div class="tech-carousel">
+                        <!-- Logos duplicados para efecto infinito -->
+                        <div class="tech-slide">
+                            <img src="assets/img/icons/laravel.svg" alt="Laravel" class="laravel"/>
+                            <img src="assets/img/icons/astro.svg" alt="Astro" class="astro"/>
+                            <img src="assets/img/icons/php.svg" alt="PHP" class="php"/>
+                            <img src="assets/img/icons/mysql.svg" alt="MySQL" class="mysql"/>
+                            <img src="assets/img/icons/javascript.svg" alt="JavaScript" class="javascript"/>
+                            <img src="assets/img/icons/jquery.svg" alt="jquery" class="jquery"/>
+                            <img src="assets/img/icons/bootstrap.svg" alt="Bootstrap" class="bootstrap"/>
+                            <img src="assets/img/icons/git.svg" alt="Git" class="git"/>
+                            <img src="assets/img/icons/html5.svg" alt="HTML" class="html"/>
+                            <img src="assets/img/icons/css.svg" alt="CSS" class="css"/>
+                        </div>
+                        <div class="tech-slide">
+                        <!-- Duplicado para bucle infinito -->
+                            <img src="assets/img/icons/laravel.svg" alt="Laravel" />
+                            <img src="assets/img/icons/php.svg" alt="PHP" />
+                            <img src="assets/img/icons/mysql.svg" alt="MySQL" />
+                            <img src="assets/img/icons/javascript.svg" alt="JavaScript" />
+                            <img src="assets/img/icons/bootstrap.svg" alt="Bootstrap" />
+                            <img src="assets/img/icons/git.svg" alt="Git" />
+                            <img src="assets/img/icons/html.svg" alt="HTML" />
+                            <img src="assets/img/icons/css.svg" alt="CSS" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

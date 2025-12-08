@@ -947,22 +947,16 @@ html {
     color: var(--text-muted) !important;
 }
 
-/* =========================================
-   FIXES DE ESTILO (ABOUT & PROJECTS)
-   ========================================= */
-
-/* 1. Hero Title más equilibrado */
 .hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem) !important; /* Reducido de 4.5rem */
+    font-size: clamp(2rem, 5vw, 3.5rem) !important; 
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
-/* 2. Timeline Elegante (Línea de tiempo) */
 .timeline {
     position: relative;
     padding-left: 2rem;
-    border-left: 2px solid rgba(255, 59, 48, 0.15); /* Línea roja muy sutil */
+    border-left: 2px solid rgba(255, 59, 48, 0.15);
     margin-left: 0.5rem;
 }
 
@@ -975,22 +969,20 @@ html {
     margin-bottom: 0;
 }
 
-/* El punto del timeline */
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -2.45rem; /* Ajuste preciso para centrar en la línea */
+    left: -2.45rem; 
     top: 0.4rem;
     width: 12px;
     height: 12px;
-    background: var(--bg-card); /* Centro vacío */
-    border: 2px solid var(--primary); /* Borde rojo */
+    background: var(--bg-card); 
+    border: 2px solid var(--primary); 
     border-radius: 50%;
     z-index: 2;
-    box-shadow: 0 0 0 4px var(--bg-card); /* "Borra" la línea detrás del punto */
+    box-shadow: 0 0 0 4px var(--bg-card); 
 }
 
-/* 3. Tech Stack Badges (Más grandes y legibles) */
 .tech-grid {
     display: flex;
     flex-wrap: wrap;
@@ -1018,19 +1010,17 @@ html {
 }
 
 .tech-badge i {
-    font-size: 1.1rem; /* Icono más grande */
+    font-size: 1.1rem; 
 }
 
-/* 4. Ajustes Generales de Texto */
 .text-balance {
-    text-wrap: balance; /* Evita líneas viudas en títulos */
+    text-wrap: balance; 
 }
 
 .text-justify {
-    text-align: justify; /* Para el texto de bio */
+    text-align: justify; 
 }
-
-/* 5. Proyectos: Botón siempre abajo */
+/
 .bento-content {
     display: flex;
     flex-direction: column;
@@ -1038,6 +1028,7 @@ html {
 }
 
 .bento-actions {
-    margin-top: auto !important; /* Empuja el botón al fondo */
+    margin-top: auto !important; 
     padding-top: 1.5rem;
 }
+

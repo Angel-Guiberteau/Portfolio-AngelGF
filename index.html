@@ -1,291 +1,264 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
+
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/png" href="assets/img/icon.ico" />
-        <title>Portfolio - Ángel GF</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="assets/styles/style.css" />      
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Portfolio de Ángel Guiberteau - Full Stack Developer. Ingeniería Web precisa.">
+        <link rel="icon" href="assets/img/ico.ico" type="image/x-icon">
+        <title>Ángel GF | Full Stack Engineer</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="assets/styles/style.css">
     </head>
+
     <body>
+        
+        <div id="tsparticles"></div>
+        <div class="noise-overlay"></div>
+        <div class="vignette-overlay"></div>
 
-        <div id="particles-js"></div>
-
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg fixed-top glass-navbar py-2 px-3 ">
-            <div class="container-fluid">
-                <a class="navbar-brand font-weight-bold text-white" href="index.html">
-                    Angel<span class="span-custom">GF</span>
-                </a>
-                <button class="navbar-toggler border-0 text-white" type="button" data-toggle="collapse" data-target="#nav-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="nav-collapse">
-                    <ul class="navbar-nav align-items-center">
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom d-flex align-items-center" href="about.html" style="white-space: nowrap;">
-                                Sobre mí
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom d-flex align-items-center" href="proyects.html" style="white-space: nowrap;">
-                                Proyectos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom d-flex align-items-center" href="mailto:aguiberteaufranco@gmail.com" style="white-space: nowrap;">
-                                Contacto
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom d-flex align-items-center border-custom" href="assets/descargas/Angel-Cv.pdf" download style="white-space: nowrap;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download mr-2" aria-hidden="true" style="vertical-align: middle;">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                    <polyline points="7 10 12 15 17 10"></polyline>
-                                    <line x1="12" x2="12" y1="15" y2="3"></line>
-                                </svg>
-                                Descargar <span class="d-none d-md-inline ml-1">CV</span>
-                            </a>
-                        </li>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Angel<span class="accent">GF</span></a>
+                <div class="nav-actions">
+                    <ul class="nav-links">
+                        <li><a href="projects.html" class="nav-link-hover">Proyectos</a></li>
+                        <li><a href="about.html" class="nav-link-hover">Sobre mí</a></li>
+                        <li><a href="mailto:aguiberteaufranco@gmail.com" class="nav-link-hover">Contacto</a></li>
                     </ul>
+                    <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
+                        <i class="fas fa-sun"></i>
+                    </button>
                 </div>
             </div>
         </nav>
 
-       <!-- Hero Section -->
-        <section class="hero-section d-flex align-items-center justify-content-center text-center" id="hero">
-            <div class="container px-4">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-10 col-lg-12">
-                        <h1 class="hero-title font-weight-bold mb-3 text-white text-break">
-                            Construyo Productos Donde <br>
-                            <span class="highlight">la Lógica se encuentra con el Código</span>
-                        </h1>
-                        <p class="hero-subtitle mb-3 text-light">
-                            Desarrollador full stack centrado en Laravel, diseño funcional y APIs limpias para soluciones web prácticas y escalables.
-                        </p>
-                        <p class="hero-subtitle mb-3 text-light">
-                            Experiencia real en proyectos colaborativos y liderazgo técnico.
-                        </p>
-                        <p class="mb-4 font-weight-bold hero-slogan text-highlight-alt">
-                            <span class="highlight">Construir. Aprender. Optimizar. Repetir.</span>
-                        </p>
-                        <a href="proyects.html" class="btn btn-custom btn-lg">Explorar mi trabajo</a>
+        <main>
+            <section class="hero parallax-container">
+                <div class="container">
+                    <div class="hero-status parallax-layer" data-speed="0.05">
+                        <span class="status-dot"></span> Disponible para trabajar
+                    </div>
+
+                    <h1 class="hero-title parallax-layer" data-speed="0.1">
+                        Construyo Productos<br>
+                        Donde la 
+                        <span class="text-gradient">Lógica se encuentra con el Código.</span>
+                    </h1>
+
+                    <p class="hero-description parallax-layer" data-speed="0.15">
+                        Desarrollador full stack centrado en Laravel, diseño funcional y APIs limpias para soluciones web prácticas y escalables. 
+                        <br>
+                        Experiencia real en proyectos colaborativos y liderazgo técnico.
+                        <br>
+                        <br>
+                        <strong>Construir. Aprender. Optimizar. Repetir.</strong>
+                    </p>
+
+                    <div class="hero-buttons parallax-layer" data-speed="0.2">
+                        <a href="about.html" class="btn btn-primary">Conóceme más</a>
+                        <a href="assets/descargas/Angel-Cv.pdf" class="btn btn-outline" download>
+                            <i class="fas fa-download" style="margin-right:8px"></i> CV
+                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- About Section -->
-        <section id="about" class="about-section d-flex align-items-center justify-content-center text-center">
-            <div class="container">
-                <h2 class="about-title">
-                    <span class="highlight highlight-title">Sobre mí</span>
-                </h2>
-                <p class="about-text">
-                    Soy técnico superior en desarrollo de aplicaciones web, apasionado por crear código limpio y resolver retos complejos.<br>
-                    Actualmente desarrollo <strong>proyectos personales</strong> que integran <strong>programación</strong>, <strong>finanzas</strong> y <strong>diseño funcional</strong>, enfocándome en soluciones prácticas y escalables.
-                </p>
-                <a href="about.html" class="btn-about">Más sobre mí</a>
-            </div>
-        </section>
-                
-        <!-- Work Section -->
-        <section id="projects" class="projects-section py-5">
-            <div class="container text-center">
-                <h2 class="mb-4 highlight highlight-title">Proyectos Destacados</h2>
-                <div class="row justify-content-center row-custom">
+            <section class="tech-marquee reveal">
+                <div class="marquee-track">
 
-                    <!-- Proyecto 1 -->
-                    <div class="col-md-6 col-lg-4 mb-4 project-col">
-                        <div class="project-card p-4">
-                            <hr class="line-custom">
-                            <h3 class="project-title">💰 Rivo 💰</h3>
-                            <div class="project-content">
-                                <p class="project-description">App de finanzas personales que ayuda a los usuarios a controlar sus ingresos, gastos y ahorros.</p>
-                                <div class="project-tags d-flex flex-wrap">
-                                    <span class="tag">Laravel</span>
-                                    <span class="tag">Bootstrap</span>
-                                    <span class="tag">JavaScript</span>
-                                    <span class="tag">MySQL</span>
-                                </div>
-                            </div>
-                            <a href="proyects.html" class="btn-project mt-3">Ver Proyecto</a>
-                        </div>
+                    <div class="marquee-group">
+                        <span>Laravel</span> <span>•</span> <span>Astro</span> <span>•</span>
+                        <span>Bootstrap</span> <span>•</span> <span>PHP</span> <span>•</span>
+                        <span>Java</span> <span>•</span> <span>Git</span> <span>•</span>
+                        <span>C</span> <span>•</span> <span>REST API</span> <span>•</span>
+                        <span>MySQL</span> <span>•</span> <span>JavaScript</span> <span>•</span>
+                        <span>jQuery</span> <span>•</span> <span>Figma</span> <span>•</span>
+                        <span>Postman</span> <span>•</span> <span>WordPress</span> <span>•</span>
+                        <span>Eloquent</span> <span>•</span> <span>HTML5</span> <span>•</span>
+                        <span>CSS3</span> <span>•</span>
                     </div>
 
-                    <!-- Proyecto 2 -->
-                    <div class="col-md-6 col-lg-4 mb-4 project-col">
-                        <div class="project-card p-4">
-                            <hr class="line-custom">
-                            <h3 class="project-title">📚 Gestor de cursos 📚</h3>
-                            <div class="project-content"> 
-                                <p class="project-description">Una plataforma web privada creada para THB Hotels para gestionar los programas de formación interna y el desarrollo de los empleados.</p>
-                                <div class="project-tags d-flex flex-wrap">
-                                    <span class="tag">Laravel</span>
-                                    <span class="tag">Bootstrap</span>
-                                    <span class="tag">JavaScript</span>
-                                    <span class="tag">MySQL</span>
-                                </div>
-                            </div>
-                            <a href="proyects.html" class="btn-project mt-3">Ver Proyecto</a>
-                        </div>
+                    <div class="marquee-group" aria-hidden="true">
+                        <span>Laravel</span> <span>•</span> <span>Astro</span> <span>•</span>
+                        <span>Bootstrap</span> <span>•</span> <span>PHP</span> <span>•</span>
+                        <span>Java</span> <span>•</span> <span>Git</span> <span>•</span>
+                        <span>C</span> <span>•</span> <span>REST API</span> <span>•</span>
+                        <span>MySQL</span> <span>•</span> <span>JavaScript</span> <span>•</span>
+                        <span>jQuery</span> <span>•</span> <span>Figma</span> <span>•</span>
+                        <span>Postman</span> <span>•</span> <span>WordPress</span> <span>•</span>
+                        <span>Eloquent</span> <span>•</span> <span>HTML5</span> <span>•</span>
+                        <span>CSS3</span> <span>•</span>
                     </div>
 
-                    <!-- Proyecto 3 -->
-                    <div class="col-md-6 col-lg-4 mb-4 project-col">
-                        <div class="project-card p-4">
-                            <hr class="line-custom">
-                            <h3 class="project-title">🏛️ Democratic City 🏛️</h3>
-                            <div class="project-content"> 
-                                <p class="project-description">Juego multijugador en navegador donde las decisiones colectivas afectan a la ciudad, buscando mantenerla viva el mayor tiempo posible.</p>
-                                <div class="project-tags d-flex flex-wrap">
-                                    <span class="tag">JavaScript</span>
-                                    <span class="tag">Fetch API</span>
+                </div>
+            </section>
+
+            <section id="work" class="projects">
+                <div class="container">
+                    <div class="section-header reveal">
+                        <h2>Trabajo Seleccionado</h2>
+                        <p>Desarrollo freelance y corporativo.</p>
+                    </div>
+
+                    <div class="bento-grid focus-grid" id="spotlight-grid">
+
+                        <article class="bento-item item-wide reveal" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
+                            <div class="spotlight-overlay"></div>
+                            <div class="card-badge badge-freelance">Freelance</div>
+
+                            <div class="bento-content">
+                                <div class="card-icon"><i class="fas fa-gem"></i></div>
+                                <h3>FC Klassic Cars</h3>
+                                <p>Web para la compraventa y tasación de vehículos de lujo, clásicos y de segunda mano.</p>
+                                <div class="tags">
+                                    <span class="tag">Web</span>
+                                    <span class="tag">UI/UX</span>
+                                    <span class="tag">SEO</span>
+                                    <span class="tag">Laravel</span>
+                                    <span class="tag">Bootstrap</span>
+                                    <span class="tag">MySQL</span>
+                                    <span class="tag">Freelance</span>
+                                </div>
+
+                                <div class="bento-actions">
+                                    <a href="https://fcklassic.com/" target="_blank" class="link-action">
+                                        Visitar Web <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="https://fcklassic.com/" target="_blank" class="card-link" aria-label="Ver FC Klassic"></a>
+                            <div class="bento-bg-decor"></div>
+                        </article>
+
+                        <article class="bento-item reveal item-rivo" data-tilt data-tilt-glare data-tilt-max-glare="0.15">
+                            <div class="spotlight-overlay"></div>
+
+                            <div class="bento-content">
+                                <div class="card-icon icon-rivo"><i class="fas fa-wallet"></i></div>
+                                <h3>Rivo</h3>
+                                <p>App de finanzas personales.</p>
+                                <div class="tags">
+                                    <span class="tag">Laravel</span>
+                                    <span class="tag">Bootstrap</span>
+                                    <span class="tag">API</span>
+                                    <span class="tag">JS</span>
+                                    <span class="tag">UI/UX</span>
+                                </div>
+
+                                <div class="bento-actions">
+                                    <a href="https://github.com/Angel-Guiberteau/Rivo" target="_blank" class="link-action">
+                                        <i class="fab fa-github"></i> Visitar Repositorio <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="https://github.com/Angel-Guiberteau/Rivo" target="_blank" class="card-link" aria-label="Ver Rivo"></a>
+                        </article>
+
+                        <article class="bento-item reveal" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
+                            <div class="spotlight-overlay"></div>
+
+                            <div class="bento-content">
+                                <div class="card-icon"><i class="fas fa-city"></i></div>
+                                <h3>Democratic City</h3>
+                                <p>Juego multijugador decision making.</p>
+                                <div class="tags">
                                     <span class="tag">HTML/CSS</span>
+                                    <span class="tag">JS</span>
+                                    <span class="tag">Fetch API</span>
                                     <span class="tag">JSON</span>
                                 </div>
+
+                                <div class="bento-actions">
+                                    <a href="https://github.com/Angel-Guiberteau/DemocraticCity" target="_blank" class="link-action">
+                                        <i class="fab fa-github"></i> Visitar Repositorio <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <a href="proyects.html" class="btn-project mt-3">Ver Proyecto</a>
-                        </div>
+                            <a href="https://github.com/Angel-Guiberteau/DemocraticCity" target="_blank" class="card-link" aria-label="Ver Democratic City"></a>
+                        </article>
+
+                        <article class="bento-item item-wide reveal" data-tilt data-tilt-glare data-tilt-max-glare="0.05">
+                            <div class="spotlight-overlay"></div>
+
+                            <div class="bento-content">
+                                <div class="flex-header">
+                                    <div class="card-icon"><i class="fas fa-building"></i></div>
+                                    <h3>THB Hotels</h3>
+                                </div>
+                                <p>Una plataforma web privada creada para THB Hotels para gestionar los programas de formación interna y el desarrollo de los empleados.</p>
+                                <div class="tags">
+                                    <span class="tag">Laravel</span>
+                                    <span class="tag">Bootstrap</span>
+                                    <span class="tag">MySQL</span>
+                                    <span class="tag">GIT</span>
+                                    <span class="tag">API</span>
+                                    <span class="tag">Intranet</span>
+                                    <span class="tag">Empresarial</span>
+                                </div>
+                            </div>
+                            <div class="card-badge badge-private"><i class="fas fa-lock"></i> Privado</div>
+                        </article>
+
                     </div>
 
-                </div>
-            </div>
-        </section>
-
-        <!-- Tech Stack Section -->
-        <section id="tech-stack" class="tech-section py-5">
-            <div class="container text-center">
-                <h2 class="mb-4 highlight highlight-title">Tech Stack</h2>
-
-¡                <div class="tech-carousel-wrapper">
-                    <div class="tech-carousel carousel-normal">
-                        <div class="tech-slide">
-¡                            <img src="assets/img/icons/laravel.svg" alt="Laravel" class="laravel" />
-                            <img src="assets/img/icons/astro.svg" alt="Astro" class="astro" />
-                            <img src="assets/img/icons/bootstrap.svg" alt="Bootstrap" class="bootstrap" />
-                            <img src="assets/img/icons/php.svg" alt="PHP" class="php" />
-                            <img src="assets/img/icons/java.svg" alt="Java" class="java" />
-                            <img src="assets/img/icons/c.svg" alt="C" class="c" />
-                            <img src="assets/img/icons/mysql.svg" alt="MySQL" class="mysql" />
-                            <img src="assets/img/icons/javascript.svg" alt="JavaScript" class="javascript" />
-                            <img src="assets/img/icons/jquery.svg" alt="jQuery" class="jquery" />
-                            <img src="assets/img/icons/git.svg" alt="Git" class="git" />
-                            <img src="assets/img/icons/html5.svg" alt="HTML" class="html" />
-                            <img src="assets/img/icons/css.svg" alt="CSS" class="css" />
-                            <img src="assets/img/icons/figma.svg" alt="Figma" class="figma" />
-                            <img src="assets/img/icons/wordpress.svg" alt="WordPress" class="wordpress" />
-                            <img src="assets/img/icons/postman.svg" alt="Postman" class="postman" />
-                        </div>
-                        <div class="tech-slide">
-                            <img src="assets/img/icons/laravel.svg" alt="Laravel" class="laravel" />
-                            <img src="assets/img/icons/astro.svg" alt="Astro" class="astro" />
-                            <img src="assets/img/icons/bootstrap.svg" alt="Bootstrap" class="bootstrap" />
-                            <img src="assets/img/icons/php.svg" alt="PHP" class="php" />
-                            <img src="assets/img/icons/java.svg" alt="Java" class="java" />
-                            <img src="assets/img/icons/c.svg" alt="C" class="c" />
-                            <img src="assets/img/icons/mysql.svg" alt="MySQL" class="mysql" />
-                            <img src="assets/img/icons/javascript.svg" alt="JavaScript" class="javascript" />
-                            <img src="assets/img/icons/jquery.svg" alt="jQuery" class="jquery" />
-                            <img src="assets/img/icons/git.svg" alt="Git" class="git" />
-                            <img src="assets/img/icons/html5.svg" alt="HTML" class="html" />
-                            <img src="assets/img/icons/css.svg" alt="CSS" class="css" />
-                            <img src="assets/img/icons/figma.svg" alt="Figma" class="figma" />
-                            <img src="assets/img/icons/wordpress.svg" alt="WordPress" class="wordpress" />
-                            <img src="assets/img/icons/postman.svg" alt="Postman" class="postman" />
-                        </div>
+                    <div class="hero-buttons reveal" style="margin-top: 4rem; justify-content: center;">
+                        <a href="projects.html" class="btn btn-outline">Explorar todos los proyectos</a>
                     </div>
                 </div>
+            </section>
+        </main>
 
-¡               <div class="tech-carousel-wrapper mt-3">
-                    <div class="tech-carousel carousel-reverse">
-                        <div class="tech-slide reverse">
-    ¡                       <img src="assets/img/icons/postman.svg" alt="Postman" class="postman" />
-                            <img src="assets/img/icons/wordpress.svg" alt="WordPress" class="wordpress" />
-                            <img src="assets/img/icons/figma.svg" alt="Figma" class="figma" />
-                            <img src="assets/img/icons/css.svg" alt="CSS" class="css" />
-                            <img src="assets/img/icons/html5.svg" alt="HTML" class="html" />
-                            <img src="assets/img/icons/git.svg" alt="Git" class="git" />
-                            <img src="assets/img/icons/jquery.svg" alt="jQuery" class="jquery" />
-                            <img src="assets/img/icons/javascript.svg" alt="JavaScript" class="javascript" />
-                            <img src="assets/img/icons/mysql.svg" alt="MySQL" class="mysql" />
-                            <img src="assets/img/icons/c.svg" alt="C" class="c" />
-                            <img src="assets/img/icons/java.svg" alt="Java" class="java" />
-                            <img src="assets/img/icons/php.svg" alt="PHP" class="php" />
-                            <img src="assets/img/icons/bootstrap.svg" alt="Bootstrap" class="bootstrap" />
-                            <img src="assets/img/icons/astro.svg" alt="Astro" class="astro" />
-                            <img src="assets/img/icons/laravel.svg" alt="Laravel" class="laravel" />
-                        </div>
-                        <div class="tech-slide reverse">
-                            <img src="assets/img/icons/postman.svg" alt="Postman" class="postman" />
-                            <img src="assets/img/icons/wordpress.svg" alt="WordPress" class="wordpress" />
-                            <img src="assets/img/icons/figma.svg" alt="Figma" class="figma" />
-                            <img src="assets/img/icons/css.svg" alt="CSS" class="css" />
-                            <img src="assets/img/icons/html5.svg" alt="HTML" class="html" />
-                            <img src="assets/img/icons/git.svg" alt="Git" class="git" />
-                            <img src="assets/img/icons/jquery.svg" alt="jQuery" class="jquery" />
-                            <img src="assets/img/icons/javascript.svg" alt="JavaScript" class="javascript" />
-                            <img src="assets/img/icons/mysql.svg" alt="MySQL" class="mysql" />
-                            <img src="assets/img/icons/c.svg" alt="C" class="c" />
-                            <img src="assets/img/icons/java.svg" alt="Java" class="java" />
-                            <img src="assets/img/icons/php.svg" alt="PHP" class="php" />
-                            <img src="assets/img/icons/bootstrap.svg" alt="Bootstrap" class="bootstrap" />
-                            <img src="assets/img/icons/astro.svg" alt="Astro" class="astro" />
-                            <img src="assets/img/icons/laravel.svg" alt="Laravel" class="laravel" />
-                        </div>
-                    </div>
+        <footer class="footer">
+            <div class="container footer-content">
+                <div class="footer-left">
+                    <span class="logo">Angel<span class="accent">GF</span></span>
+                    <p class="footer-text">© 2025. Todos los derechos reservados.</p>
                 </div>
-            </div>
-        </section>
-
-       <footer class="custom-footer">
-            <div class="container d-flex justify-content-between align-items-center flex-wrap">
-                <p class="mb-0 footer-text">
-                © 2025 Ángel GF. Todos los derechos reservados.
-                </p>
-                <div class="footer-buttons">
-                    <ul class="example-2">
-                        <li class="icon-content">
-                            <a data-social="github" aria-label="GitHub" href="https://github.com/Angel-Guiberteau" target="_blank">
-                                <div class="filled"></div>
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.2.8-.5v-1.9c-3.3.7-4-1.6-4-1.6a3.1 3.1 0 0 0-1.3-1.7c-1-.7 0-.7 0-.7a2.5 2.5 0 0 1 1.9 1.3 2.6 2.6 0 0 0 3.5 1 2.6 2.6 0 0 1 .8-1.7c-2.6-.3-5.3-1.3-5.3-5.7a4.5 4.5 0 0 1 1.2-3.1 4.2 4.2 0 0 1 .1-3.1s1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2a4.2 4.2 0 0 1 .1 3.1 4.5 4.5 0 0 1 1.2 3.1c0 4.4-2.7 5.4-5.3 5.7a3 3 0 0 1 .9 2.4v3.6c0 .3.2.6.8.5A12 12 0 0 0 12 .3"></path>
-                                </svg>
-                            </a>
-                            <div class="tooltip">GitHub</div>
-                        </li>
-                        <li class="icon-content">
-                            <a data-social="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/%C3%A1ngel-guiberteau-franco" target="_blank">
-                                <div class="filled"></div>
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.7 2.2 5 5 5h14c2.7 0 5-2.3 5-5v-14c0-2.8-2.3-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7S5 4.3 6 4.3c1 0 1.7.8 1.7 1.7s-.8 1.7-1.7 1.7zm13.5 11.3h-3v-5.5c0-1.3-.5-2.2-1.6-2.2-1 0-1.6.7-1.8 1.4-.1.2-.1.5-.1.8v5.5h-3s.1-9 0-10h3v1.4c.4-.7 1.3-1.7 3.2-1.7 2.3 0 4 1.5 4 4.6v5.7z"/>
-                                </svg>
-                            </a>
-                            <div class="tooltip">LinkedIn</div>
-                        </li>
-                        <li class="icon-content">
-                            <a data-social="instagram" aria-label="Instagram" href="https://www.instagram.com/angeel.gf/" target="_blank">
-                                <div class="filled"></div>
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M7 2C4.8 2 3 3.8 3 6v12c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4V6c0-2.2-1.8-4-4-4H7zm10 2c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h10zM12 7c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 2c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3zm4.8-3.2c0 .6-.5 1.2-1.2 1.2s-1.2-.5-1.2-1.2.5-1.2 1.2-1.2 1.2.5 1.2 1.2z"/>
-                                </svg>
-                            </a>
-                            <div class="tooltip">Instagram</div>
-                        </li>
-                    </ul>
+                <div class="social-links">
+                    <a href="https://github.com/Angel-Guiberteau" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/%C3%A1ngel-guiberteau-franco" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:aguiberteaufranco@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </footer>
 
+        <div class="mobile-nav-wrapper d-lg-none">
+            <nav class="mobile-nav-menu" id="mobileMenu">
+                <a href="index.html" class="mobile-link">
+                    <i class="fas fa-home"></i> <span>Inicio</span>
+                </a>
+                <a href="about.html" class="mobile-link">
+                    <i class="fas fa-user"></i> <span>Sobre mí</span>
+                </a>
+                <a href="proyects.html" class="mobile-link">
+                    <i class="fas fa-code"></i> <span>Proyectos</span>
+                </a>
+                <a href="mailto:aguiberteaufranco@gmail.com" class="mobile-link">
+                    <i class="fas fa-paper-plane"></i> <span>Contacto</span>
+                </a>
+                <a href="assets/descargas/Angel-Cv.pdf" download class="mobile-link highlight">
+                    <i class="fas fa-download"></i> <span>CV</span>
+                </a>
+            </nav>
 
-        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+            <button class="mobile-nav-fab" id="mobileNavToggle" aria-label="Menu">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
 
-        <script src="assets/scripts/particleJS.js"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+        <script src="assets/js/main.js"></script>
     </body>
+
 </html>

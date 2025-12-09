@@ -1,239 +1,333 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sobre mí | Ángel GF</title>
+        <link rel="icon" href="assets/img/ico.ico" type="image/png">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre mí | Ángel GF</title>
-    <link rel="icon" href="assets/img/ico.ico" type="image/png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="assets/styles/about.css">
-</head>
+        <link rel="stylesheet" href="assets/styles/about.css">
+    </head>
 
-<body>
+    <body>
+        <div id="tsparticles"></div>
+        <div class="noise-overlay"></div>
+        <div class="vignette-overlay"></div>
 
-    <div id="tsparticles"></div>
-    <div class="noise-overlay"></div>
-    <div class="vignette-overlay"></div>
-
-    <nav class="navbar navbar-expand-lg fixed-top p-0">
-        <div class="container h-100 d-flex justify-content-between align-items-center">
-            <a href="index.html" class="logo text-reset m-0 p-0">Angel<span class="accent">GF</span></a>
-            <div class="d-flex align-items-center gap-4">
-                <ul class="d-none d-lg-flex mb-0 gap-4" style="list-style: none;">
-                    <li><a href="projects.html" class="nav-link-hover">Proyectos</a></li>
-                    <li><a href="about.html" class="nav-link-hover text-reset" style="color: var(--text-main);">Sobre mí</a></li>
-                    <li><a href="mailto:aguiberteaufranco@gmail.com" class="nav-link-hover">Contacto</a></li>
-                </ul>
-                <button id="theme-toggle" class="theme-btn btn p-0 border-0"><i class="fas fa-sun"></i></button>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <section class="hero-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 reveal gap-1 d-flex flex-column">
-                        <span class="mb-2 fw-bold text-uppercase small" style="color: var(--primary); letter-spacing: 1px;">
-                            <i class="fas fa-user-circle me-1"></i> Perfil Profesional
-                        </span>
-                        <h1 class="hero-title">
-                            Hola 👋, soy <span class="text-gradient">Ángel Guiberteau</span>
-                        </h1>
-                        <p class="text-muted" style="font-size: 1.15rem; max-width: 800px;">
-                            Desarrollador Full Stack · Especialista en Laravel · Futuro Especialista en IA y Big Data
-                        </p>
-                    </div>
+        <nav class="navbar navbar-expand-lg fixed-top p-0">
+            <div class="container h-100 d-flex justify-content-between align-items-center">
+                <a href="index.html" class="logo text-reset m-0 p-0">Angel<span class="accent">GF</span></a>
+                <div class="d-flex align-items-center gap-4">
+                    <ul class="d-none d-lg-flex mb-0 gap-4" style="list-style: none;">
+                        <li>
+                            <a href="projects.html" class="nav-link-hover">Proyectos</a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="nav-link-hover text-reset" style="color: var(--text-main);">Sobre mí</a>
+                        </li>
+                        <li>
+                            <a href="mailto:aguiberteaufranco@gmail.com" class="nav-link-hover">Contacto</a>
+                        </li>
+                    </ul>
+                    <button id="theme-toggle" class="theme-btn btn p-0 border-0">
+                        <i class="fas fa-sun"></i>
+                    </button>
                 </div>
             </div>
-        </section>
-
-        <section class="pb-5">
-            <div class="container">
-                <div class="row g-4">
-                    
-                    <div class="col-lg-8 d-flex flex-column gap-4">
-
-                        <article class="bento-card reveal">
-                            <div class="card-header-icon">
-                                <i class="fas fa-quote-left text-primary fa-lg"></i>
-                                <h3 class="card-title">Mi Enfoque</h3>
-                            </div>
-                            <div class="card-text">
-                                <p class="mb-3">
-                                    <strong>Desarrollador de Aplicaciones Web</strong> y actualmente <strong>Responsable de Frontend</strong> en <strong>THB Hotels</strong>. Mi enfoque se basa en crear soluciones digitales claras, eficientes y orientadas a la experiencia del usuario, combinando diseño, lógica y arquitectura.
-                                </p>
-                                <p class="mb-0">
-                                    Trabajo como <strong>desarrollador full stack especializado en Laravel</strong>, integrando diseño <strong>UI/UX</strong>, desarrollo frontend y contribuciones en backend. Busco que cada proyecto sea <strong>escalable, mantenible</strong> y pensado para resolver necesidades reales con precisión técnica.
-                                </p>
-                            </div>
-                        </article>
-
-                        <article class="bento-card reveal">
-                            <div class="card-header-icon">
-                                <i class="fas fa-stream text-primary fa-lg"></i>
-                                <h3 class="card-title">Trayectoria</h3>
-                            </div>
-
-                            <div class="timeline">
-
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <span class="timeline-date">En Curso</span>
-                                    <h4 class="timeline-role">Especialización en IA y Big Data</h4>
-                                    <div class="timeline-company">Formación Superior</div>
-                                    <p class="card-text small">
-                                        Formación avanzada en modelos de <strong>inteligencia artificial</strong>, <strong>machine learning</strong> y análisis de grandes volúmenes de datos mediante Python, TensorFlow, Spark y entornos cloud.
-                                    </p>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <span class="timeline-date">Actualidad</span>
-                                    <h4 class="timeline-role">Full Stack Freelance</h4>
-                                    <div class="timeline-company">FC Klassic Cars & Proyectos</div>
-                                    <p class="card-text small">
-                                        Desarrollo de soluciones a medida con enfoque en <strong>rendimiento</strong>, <strong>conversión</strong> y experiencia de usuario. Diseño UI/UX, SEO, arquitectura escalable y aplicaciones orientadas al negocio.
-                                    </p>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <span class="timeline-date">Actualidad</span>
-                                    <h4 class="timeline-role">Responsable de Frontend & Full Stack Developer</h4>
-                                    <div class="timeline-company">THB Hotels</div>
-                                    <p class="card-text small">
-                                        <strong>Desarrollador Full Stack especializado en Laravel</strong> y <strong>Responsable del área de frontend</strong> en <strong>THB Hotels</strong>. Trabajo tanto en <strong>aplicaciones internas</strong> como en <strong>webs públicas</strong>, combinando desarrollo frontend con diseño <strong>UI/UX</strong>.
-                                        <br><br>
-                                        También trabajo en el desarrollo y evolución de un <strong>paquete interno corporativo</strong> que unifica la experiencia visual y técnica de los proyectos, incorporando componentes propios y patrones comunes.
-                                        <br><br>
-                                        También participo en tareas backend —<strong>diseño de APIs</strong>, <strong>optimización</strong> y <strong>arquitectura</strong>— participando en implementaciones clave dentro de la estrategia tecnológica de la empresa.
-                                    </p>
-                                </div>
-
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <span class="timeline-date">2023 - 2025</span>
-                                    <h4 class="timeline-role">Graduado en Desarrollo de Aplicaciones Web</h4>
-                                    <div class="timeline-company">Escuela Virgen de Guadalupe</div>
-                                    <p class="card-text small">
-                                        Formación completa en <strong>programación</strong> y <strong>desarrollo web</strong>.<br><br>
-                                        Durante el periodo de dual y prácticas fui seleccionado por <strong>THB Hotels</strong>, donde asumí responsabilidades reales desde el primer momento.<br><br>
-                                        Lideré módulos completos de proyectos internos —como plataformas educativas y herramientas corporativas— coordinando tareas, revisando código y colaborando con departamentos clave.<br><br>
-                                        Presenté avances en reuniones con responsables, gestioné entregas y defendí soluciones técnicas, fortaleciendo mis habilidades de <strong>comunicación</strong>, <strong>dirección</strong> y <strong>gestión de producto</strong>.
-                                    </p>
-                                </div>
-
-                            </div>
-                        </article>
-
-                    </div>
-
-                    <div class="col-lg-4 d-flex flex-column gap-4">
-                        
-                        <article class="bento-card reveal">
-                            <div class="card-header-icon">
-                                <i class="fas fa-layer-group text-primary fa-lg"></i>
-                                <h3 class="card-title">Tech Stack</h3>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <span class="text-muted small fw-bold text-uppercase d-block mb-2">Backend & Core</span>
-                                <div class="tech-badges">
-                                    <div class="t-badge"><i class="fab fa-laravel text-primary"></i> Laravel</div>
-                                    <div class="t-badge"><i class="fab fa-php text-primary"></i> PHP</div>
-                                    <div class="t-badge"><i class="fas fa-database text-primary"></i> MySQL</div>
-                                    <div class="t-badge"><i class="fas fa-layer-group text-primary"></i> Eloquent</div> <div class="t-badge"><i class="fab fa-java text-primary"></i> Java</div>
-                                    <div class="t-badge"><i class="fa-solid fa-copyright text-primary"></i> C</div> <div class="t-badge"><i class="fas fa-network-wired text-primary"></i> API REST</div>
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <span class="text-muted small fw-bold text-uppercase d-block mb-2">Frontend & UI</span>
-                                <div class="tech-badges">
-                                    <div class="t-badge"><i class="fab fa-js text-primary"></i> JavaScript</div>
-                                    <div class="t-badge"><i class="fas fa-code text-primary"></i> jQuery</div>
-                                    <div class="t-badge"><i class="fas fa-leaf text-primary"></i> Blade</div>
-                                    <div class="t-badge"><i class="fab fa-css3-alt text-primary"></i> CSS3</div>
-                                    <div class="t-badge"><i class="fab fa-bootstrap text-primary"></i> Bootstrap</div>
-                                    <div class="t-badge"><i class="fab fa-html5 text-primary"></i> HTML5</div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="text-muted small fw-bold text-uppercase d-block mb-2">Tools & Learning</span>
-                                <div class="tech-badges">
-                                    <div class="t-badge"><i class="fab fa-figma text-primary"></i> Figma</div>
-                                    <div class="t-badge"><i class="fas fa-laptop-code text-primary"></i> VS Code</div>
-                                    <div class="t-badge"><i class="fas fa-sticky-note text-primary"></i> Notion</div>
-                                    <div class="t-badge"><i class="fab fa-trello text-primary"></i> Trello</div>
-                                    <div class="t-badge"><i class="fas fa-palette text-primary"></i> Canva</div>
-                                    <div class="t-badge"><i class="fab fa-git-alt text-primary"></i> Git</div>
-                                    <div class="t-badge"><i class="fab fa-github text-primary"></i> GitHub</div>
-                                    <div class="t-badge"><i class="fas fa-rocket text-primary"></i> Postman</div>
-                                    <div class="t-badge"><i class="fab fa-python text-primary"></i> Python</div>
-                                    <div class="t-badge"><i class="fas fa-brain text-primary"></i> TensorFlow</div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="bento-card reveal text-center justify-content-center">
-                            <div class="mb-2">
-                                <i class="fas fa-paper-plane fa-2x text-primary"></i>
-                            </div>
-                            <h3 class="card-title mt-2">Contacto</h3>
-                            <p class="card-text text-center small mb-4">¿Tienes un proyecto en mente?</p>
-                            
-                            <a href="mailto:aguiberteaufranco@gmail.com" class="contact-btn">
-                                Enviar Correo
-                            </a>
-
-                            <div class="social-links d-flex justify-content-center gap-3 mt-3">
-                                <a href="https://github.com/Angel-Guiberteau" target="_blank" class="text-muted"><i class="fab fa-github fa-lg"></i></a>
-                                <a href="https://www.linkedin.com/in/%C3%A1ngel-guiberteau-franco" target="_blank" class="text-muted"><i class="fab fa-linkedin fa-lg"></i></a>
-                            </div>
-                        </article>
-
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-            <div class="text-center text-md-start">
-                <span class="logo m-0">Angel<span class="accent">GF</span></span>
-                <p class="text-muted small mb-0 mt-1">© 2025. Todos los derechos reservados.</p>
-            </div>
-            <div class="social-links d-flex gap-3">
-                <a href="https://github.com/Angel-Guiberteau" target="_blank"><i class="fab fa-github fa-lg"></i></a>
-                <a href="https://www.linkedin.com/in/%C3%A1ngel-guiberteau-franco" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
-                <a href="mailto:aguiberteaufranco@gmail.com"><i class="fas fa-envelope fa-lg"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <div class="mobile-nav-wrapper d-lg-none">
-        <nav class="mobile-nav-menu" id="mobileMenu">
-            <a href="index.html" class="mobile-link"><i class="fas fa-home"></i> Inicio</a>
-            <a href="about.html" class="mobile-link"><i class="fas fa-user"></i> Sobre mí</a>
-            <a href="projects.html" class="mobile-link"><i class="fas fa-code"></i> Proyectos</a>
-            <a href="mailto:aguiberteaufranco@gmail.com" class="mobile-link"><i class="fas fa-paper-plane"></i> Contacto</a>
         </nav>
-        <button class="mobile-nav-fab" id="mobileNavToggle"><i class="fas fa-bars"></i></button>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    <script src="assets/js/main.js"></script>
-</body>
+        <main>
+            <section class="hero-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 reveal gap-1 d-flex flex-column">
+                            <span class="mb-2 fw-bold text-uppercase small" style="color: var(--primary); letter-spacing: 1px;">
+                                <i class="fas fa-user-circle me-1"></i> Perfil Profesional
+                            </span>
+                            <h1 class="hero-title">
+                                Hola 👋, soy <span class="text-gradient">Ángel Guiberteau</span>
+                            </h1>
+                            <p class="text-muted" style="font-size: 1.15rem; max-width: 800px;">
+                                Desarrollador Full Stack · Especialista en Laravel · Futuro Ingeniero de IA
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-5">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-8 d-flex flex-column gap-4">
+                            <article class="bento-card reveal">
+                                <div class="card-header-icon">
+                                    <i class="fas fa-quote-left text-primary fa-lg"></i>
+                                    <h3 class="card-title">Mi Enfoque</h3>
+                                </div>
+                                <div class="card-text">
+                                    <p class="mb-3">
+                                        <strong>Desarrollador de Aplicaciones Web</strong> y actualmente
+                                        <strong>Responsable de Frontend</strong> en <strong>THB Hotels</strong>. Mi enfoque se basa en crear
+                                        soluciones digitales claras, eficientes y orientadas a la experiencia del usuario, combinando diseño,
+                                        lógica y arquitectura.
+                                    </p>
+                                    <p class="mb-0">
+                                        Trabajo como <strong>desarrollador full stack especializado en Laravel</strong>, integrando diseño
+                                        <strong>UI/UX</strong>, desarrollo frontend y contribuciones en backend. Busco que cada proyecto sea
+                                        <strong>escalable, mantenible</strong> y pensado para resolver necesidades reales con precisión técnica.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="bento-card reveal">
+                                <div class="card-header-icon">
+                                    <i class="fas fa-stream text-primary fa-lg"></i>
+                                    <h3 class="card-title">Trayectoria</h3>
+                                </div>
+
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <span class="timeline-date">En Curso</span>
+                                        <h4 class="timeline-role">Especialización en IA y Big Data</h4>
+                                        <div class="timeline-company">Formación Superior</div>
+                                        <p class="card-text small">
+                                            Formación avanzada en modelos de <strong>inteligencia artificial</strong>,
+                                            <strong>machine learning</strong> y análisis de grandes volúmenes de datos mediante Python,
+                                            TensorFlow, Spark y entornos cloud.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <span class="timeline-date">Actualidad</span>
+                                        <h4 class="timeline-role">Full Stack Freelance</h4>
+                                        <div class="timeline-company">FC Klassic Cars & Proyectos</div>
+                                        <p class="card-text small">
+                                            Desarrollo de soluciones a medida con enfoque en <strong>rendimiento</strong>,
+                                            <strong>conversión</strong> y experiencia de usuario. Diseño UI/UX, SEO, arquitectura escalable y
+                                            aplicaciones orientadas al negocio.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <span class="timeline-date">Actualidad</span>
+                                        <h4 class="timeline-role">Responsable de Frontend & Full Stack Developer</h4>
+                                        <div class="timeline-company">THB Hotels</div>
+                                        <p class="card-text small">
+                                            <strong>Desarrollador Full Stack especializado en Laravel</strong> y
+                                            <strong>Responsable del área de frontend</strong> en <strong>THB Hotels</strong>. Trabajo tanto en
+                                            <strong>aplicaciones internas</strong> como en <strong>webs públicas</strong>, combinando desarrollo
+                                            frontend avanzado con diseño <strong>UI/UX</strong>.
+                                            <br><br>
+                                            Lidero el desarrollo y evolución de un <strong>paquete interno corporativo</strong> que unifica la
+                                            experiencia visual y técnica de los proyectos, incorporando componentes propios y patrones comunes.
+                                            <br><br>
+                                            También participo en tareas backend —<strong>diseño de APIs</strong>, <strong>optimización</strong> y
+                                            <strong>arquitectura</strong>— y coordino flujos con otros equipos, liderando implementaciones clave
+                                            dentro de la estrategia tecnológica de la empresa.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <span class="timeline-date">2023 - 2025</span>
+                                        <h4 class="timeline-role">Graduado en Desarrollo de Aplicaciones Web</h4>
+                                        <div class="timeline-company">Escuela Virgen de Guadalupe</div>
+                                        <p class="card-text small">
+                                            Formación completa en <strong>programación</strong> y
+                                            <strong>desarrollo web</strong>.<br><br>
+                                            Durante el periodo de dual y prácticas fui seleccionado por <strong>THB Hotels</strong>, donde asumí
+                                            responsabilidades reales desde el primer momento.<br><br>
+                                            Lideré módulos completos de proyectos internos —como plataformas educativas y herramientas
+                                            corporativas— coordinando tareas, revisando código y colaborando con departamentos clave.<br><br>
+                                            Presenté avances en reuniones con responsables, gestioné entregas y defendí soluciones técnicas,
+                                            fortaleciendo mis habilidades de <strong>comunicación</strong>, <strong>dirección</strong> y
+                                            <strong>gestión de producto</strong>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-lg-4 d-flex flex-column gap-4">
+                            <article class="bento-card reveal">
+                                <div class="card-header-icon">
+                                    <i class="fas fa-layer-group text-primary fa-lg"></i>
+                                    <h3 class="card-title">Tech Stack</h3>
+                                </div>
+
+                                <div class="mb-4">
+                                    <span class="text-muted small fw-bold text-uppercase d-block mb-2">Backend & Core</span>
+                                    <div class="tech-badges">
+                                        <div class="t-badge">
+                                            <i class="fab fa-laravel text-primary"></i> Laravel
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fab fa-php text-primary"></i> PHP
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fas fa-database text-primary"></i> MySQL
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fas fa-layer-group text-primary"></i> Eloquent
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fab fa-java text-primary"></i> Java
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fa-solid fa-copyright text-primary"></i> C
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fas fa-network-wired text-primary"></i> API REST
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <span class="text-muted small fw-bold text-uppercase d-block mb-2">Frontend & UI</span>
+                                    <div class="tech-badges">
+                                        <div class="t-badge">
+                                            <i class="fab fa-js text-primary"></i> JavaScript
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fas fa-code text-primary"></i> jQuery
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fas fa-leaf text-primary"></i> Blade
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fab fa-css3-alt text-primary"></i> CSS3
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fab fa-bootstrap text-primary"></i> Bootstrap
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fab fa-html5 text-primary"></i> HTML5
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="text-muted small fw-bold text-uppercase d-block mb-2">Tools & Learning</span>
+                                    <div class="tech-badges">
+                                        <div class="t-badge">
+                                            <i class="fab fa-figma text-primary"></i> Figma
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fas fa-laptop-code text-primary"></i> VS Code
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fas fa-sticky-note text-primary"></i> Notion
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fab fa-trello text-primary"></i> Trello
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fas fa-palette text-primary"></i> Canva
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fab fa-git-alt text-primary"></i> Git
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fab fa-github text-primary"></i> GitHub
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fas fa-rocket text-primary"></i> Postman
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fab fa-python text-primary"></i> Python
+                                        </div>
+                                        <div class="t-badge">
+                                            <i class="fas fa-brain text-primary"></i> TensorFlow
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bento-card reveal text-center justify-content-center">
+                                <div class="mb-2">
+                                    <i class="fas fa-paper-plane fa-2x text-primary"></i>
+                                </div>
+                                <h3 class="card-title mt-2">Contacto</h3>
+                                <p class="card-text small mb-4">¿Tienes un proyecto en mente?</p>
+
+                                <a href="mailto:aguiberteaufranco@gmail.com" class="contact-btn">
+                                    Enviar Correo
+                                </a>
+
+                                <div class="social-links d-flex justify-content-center gap-3 mt-3">
+                                    <a href="https://github.com/Angel-Guiberteau" target="_blank" class="text-muted">
+                                        <i class="fab fa-github fa-lg"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/%C3%A1ngel-guiberteau-franco" target="_blank" class="text-muted">
+                                        <i class="fab fa-linkedin fa-lg"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="text-center text-md-start">
+                    <span class="logo m-0">Angel<span class="accent">GF</span></span>
+                    <p class="text-muted small mb-0 mt-1">© 2025. Todos los derechos reservados.</p>
+                </div>
+                <div class="social-links d-flex gap-3">
+                    <a href="https://github.com/Angel-Guiberteau" target="_blank">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/%C3%A1ngel-guiberteau-franco" target="_blank">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                    <a href="mailto:aguiberteaufranco@gmail.com">
+                        <i class="fas fa-envelope fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <div class="mobile-nav-wrapper d-lg-none">
+            <nav class="mobile-nav-menu" id="mobileMenu">
+                <a href="index.html" class="mobile-link">
+                    <i class="fas fa-home"></i> <span>Inicio</span>
+                </a>
+                <a href="about.html" class="mobile-link">
+                    <i class="fas fa-user"></i> <span>Sobre mí</span>
+                </a>
+                <a href="projects.html" class="mobile-link">
+                    <i class="fas fa-code"></i> <span>Proyectos</span>
+                </a>
+                <a href="mailto:aguiberteaufranco@gmail.com" class="mobile-link">
+                    <i class="fas fa-paper-plane"></i> <span>Contacto</span>
+                </a>
+                <a href="assets/descargas/Angel-Cv.pdf" download class="mobile-link highlight">
+                    <i class="fas fa-download"></i> <span>CV</span>
+                </a>
+            </nav>
+
+            <button class="mobile-nav-fab" id="mobileNavToggle" aria-label="Menú">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>

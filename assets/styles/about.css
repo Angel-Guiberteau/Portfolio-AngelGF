@@ -138,14 +138,43 @@ ul {
     color: var(--primary);
 }
 
-.nav-link-hover {
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-muted);
+    position: relative;
 }
 
-.nav-link-hover:hover {
+.nav-links a:hover {
     color: var(--text-main);
+}
+
+.nav-link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link-hover:hover::after {
+    width: 100%;
+}
+
+.nav-link-hover[aria-current="page"] {
+    color: var(--text-main);
+}
+
+.nav-link-hover[aria-current="page"]::after {
+    width: 100%;
 }
 
 .theme-btn {
@@ -496,4 +525,29 @@ ul {
 
 .text-muted {
     color: var(--text-muted) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+    }
+
+    #tsparticles {
+        display: none !important;
+    }
+
+    .reveal,
+    .reveal.active,
+    .bento-card {
+        transform: none !important;
+    }
+}
+
+.reduce-motion #tsparticles {
+    display: none !important;
 }

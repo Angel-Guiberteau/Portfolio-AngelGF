@@ -1,40 +1,56 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    
-    const lenis = new Lenis({
-        duration: 0.6, 
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        mouseMultiplier: 1,
-        smoothTouch: false, 
-        touchMultiplier: 2,
-    });
+    const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const isTouchViewport = window.matchMedia('(max-width: 768px)').matches;
+    const shouldReduceMotion = reduceMotionQuery.matches || isTouchViewport;
 
-    function raf(time) {
-        lenis.raf(time);
+    if (shouldReduceMotion) {
+        document.documentElement.classList.add('reduce-motion');
+        document.querySelectorAll('[data-tilt]').forEach((card) => {
+            card.removeAttribute('data-tilt');
+            card.removeAttribute('data-tilt-glare');
+            card.removeAttribute('data-tilt-max-glare');
+        });
+    }
+
+    if (!shouldReduceMotion && window.Lenis) {
+        const lenis = new Lenis({
+            duration: 0.6,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
         requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
 
     const toggleBtn = document.getElementById('theme-toggle');
     const html = document.documentElement;
-    const icon = toggleBtn.querySelector('i');
-    
+    const icon = toggleBtn ? toggleBtn.querySelector('i') : null;
+
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     function setTheme(mode, saveToStorage = false) {
         html.setAttribute('data-theme', mode);
         if (saveToStorage) localStorage.setItem('theme', mode);
 
-        if (mode === 'dark') {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
+        if (icon) {
+            if (mode === 'dark') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
         }
-        loadNetworkParticles(mode);
+        loadNetworkParticles(mode).catch(() => {});
     }
 
     const savedTheme = localStorage.getItem('theme');
@@ -48,13 +64,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    toggleBtn.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme, true);
-    });
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme, true);
+        });
+    }
 
     async function loadNetworkParticles(theme) {
+        if (shouldReduceMotion || !window.tsParticles || !document.getElementById('tsparticles')) {
+            return;
+        }
+
         const isDark = theme === 'dark';
         const particleColor = isDark ? "#ffffff" : "#000000";
         const accentColor = "#ff3b30";
@@ -109,15 +131,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const navbar = document.querySelector('.navbar');
     let lastScrollY = window.scrollY;
 
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        if (currentScrollY > lastScrollY && currentScrollY > 50) {
-            navbar.classList.add('nav-hidden');
-        } else {
-            navbar.classList.remove('nav-hidden');
-        }
-        lastScrollY = currentScrollY;
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                navbar.classList.add('nav-hidden');
+            } else {
+                navbar.classList.remove('nav-hidden');
+            }
+            lastScrollY = currentScrollY;
+        });
+    }
 
     const grid = document.getElementById('spotlight-grid');
     if (grid) {

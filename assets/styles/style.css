@@ -195,6 +195,14 @@ ul {
     width: 100%;
 }
 
+.nav-link-hover[aria-current="page"] {
+    color: var(--text-main);
+}
+
+.nav-link-hover[aria-current="page"]::after {
+    width: 100%;
+}
+
 .theme-btn {
     background: transparent;
     border: 1px solid var(--border);
@@ -221,10 +229,13 @@ ul {
 }
 
 .hero {
-    padding: 9rem 0 5rem;
+    min-height: calc(100svh - 170px);
+    padding: 6.5rem 0 2.5rem;
     text-align: center;
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
 }
 
 .parallax-layer {
@@ -349,12 +360,59 @@ ul {
 }
 
 .tech-marquee {
-    margin: 4rem 0 6rem;
+    margin: 0 0 6rem;
     overflow: hidden;
     user-select: none;
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     background: transparent;
+}
+
+.value-props {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 4rem;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.value-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-shadow: var(--shadow);
+}
+
+.value-item i {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--primary-dim);
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.value-item h2 {
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.value-item p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin: 0;
 }
 
 .marquee-track {
@@ -503,12 +561,36 @@ ul {
     color: var(--text-main);
 }
 
+.project-meta {
+    display: block;
+    color: var(--primary);
+    font-size: 0.74rem;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: -0.15rem 0 0.8rem;
+}
+
 .bento-item p {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 1rem;
     flex-grow: 1;
+}
+
+.impact-list {
+    display: grid;
+    gap: 0.45rem;
+    margin: 0 0 1.2rem;
+    padding-left: 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.impact-list li {
+    list-style: disc;
 }
 
 .tags {
@@ -681,6 +763,20 @@ html:not([data-theme="dark"]) .spotlight-overlay {
     padding: 3rem 0;
     margin-top: 4rem;
     background: var(--bg-card);
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer .container > p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 .footer-content {
@@ -1018,9 +1114,9 @@ html {
 }
 
 .text-justify {
-    text-align: justify; 
+    text-align: justify;
 }
-/
+
 .bento-content {
     display: flex;
     flex-direction: column;
@@ -1028,7 +1124,53 @@ html {
 }
 
 .bento-actions {
-    margin-top: auto !important; 
+    margin-top: auto !important;
     padding-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-item {
+        min-height: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+    }
+
+    #tsparticles,
+    .spotlight-overlay {
+        display: none !important;
+    }
+
+    .marquee-group {
+        animation: none !important;
+    }
+
+    .reveal,
+    .reveal.active,
+    .bento-content,
+    .card-badge {
+        transform: none !important;
+    }
+}
+
+.reduce-motion #tsparticles,
+.reduce-motion .spotlight-overlay {
+    display: none !important;
+}
+
+.reduce-motion .marquee-group {
+    animation: none !important;
 }
 

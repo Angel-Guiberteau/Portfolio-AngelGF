@@ -4,6 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Sobre Ángel Guiberteau - Full Stack Developer, Responsable de Frontend, Laravel, UI/UX e IA aplicada.">
+        <link rel="canonical" href="https://angel-guiberteau.github.io/Portfolio/about.html">
+        <meta property="og:type" content="profile">
+        <meta property="og:title" content="Sobre mí | Ángel GF">
+        <meta property="og:description" content="Perfil profesional de Ángel Guiberteau: Laravel, frontend, UI/UX, THB Hotels, freelance e IA aplicada.">
+        <meta property="og:url" content="https://angel-guiberteau.github.io/Portfolio/about.html">
+        <meta property="og:image" content="assets/img/ico.png">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Sobre mí | Ángel GF">
+        <meta name="twitter:description" content="Full Stack Developer especializado en Laravel, frontend, UI/UX e IA aplicada.">
         <title>Sobre mí | Ángel GF</title>
         <link rel="icon" href="assets/img/ico.ico" type="image/png">
 
@@ -21,19 +30,13 @@
 
         <nav class="navbar navbar-expand-lg fixed-top p-0">
             <div class="container h-100 d-flex justify-content-between align-items-center">
-                <a href="index.html" class="logo text-reset m-0 p-0">Angel<span class="accent">GF</span></a>
+                <a href="index.html" class="navbar-brand logo text-reset m-0 p-0">Angel<span class="accent">GF</span></a>
 
                 <div class="d-flex align-items-center gap-4">
-                    <ul class="d-none d-lg-flex mb-0 gap-4" style="list-style: none;">
-                        <li>
-                            <a href="projects.html" class="nav-link-hover">Proyectos</a>
-                        </li>
-                        <li>
-                            <a href="about.html" class="nav-link-hover text-reset" style="color: var(--text-main);">Sobre mí</a>
-                        </li>
-                        <li>
-                            <a href="mailto:aguiberteaufranco@gmail.com" class="nav-link-hover">Contacto</a>
-                        </li>
+                    <ul class="nav-links d-none d-lg-flex mb-0 gap-4">
+                        <li><a href="projects.html" class="nav-link-hover">Proyectos</a></li>
+                        <li><a href="about.html" class="nav-link-hover text-reset" style="color: var(--text-main);" aria-current="page">Sobre mí</a></li>
+                        <li><a href="mailto:aguiberteaufranco@gmail.com" class="nav-link-hover">Contacto</a></li>
                     </ul>
 
                     <button id="theme-toggle" class="theme-btn btn p-0 border-0" aria-label="Cambiar tema">
@@ -300,10 +303,10 @@
                 </div>
 
                 <div class="social-links d-flex gap-3">
-                    <a href="https://github.com/Angel-Guiberteau" target="_blank" aria-label="GitHub">
+                    <a href="https://github.com/Angel-Guiberteau" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <i class="fab fa-github fa-lg"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/%C3%A1ngel-guiberteau-franco" target="_blank" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/%C3%A1ngel-guiberteau-franco" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <i class="fab fa-linkedin fa-lg"></i>
                     </a>
                     <a href="mailto:aguiberteaufranco@gmail.com" aria-label="Email">
@@ -318,7 +321,7 @@
                 <a href="index.html" class="mobile-link">
                     <i class="fas fa-home"></i> <span>Inicio</span>
                 </a>
-                <a href="about.html" class="mobile-link">
+                <a href="about.html" class="mobile-link" aria-current="page">
                     <i class="fas fa-user"></i> <span>Sobre mí</span>
                 </a>
                 <a href="projects.html" class="mobile-link">

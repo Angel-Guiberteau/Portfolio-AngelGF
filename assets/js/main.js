@@ -143,16 +143,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    const grid = document.getElementById('spotlight-grid');
-    if (grid) {
-        grid.addEventListener('mousemove', (e) => {
-            document.querySelectorAll('.bento-item, .bento-card').forEach((card) => {
+    const spotlightGrids = document.querySelectorAll('#spotlight-grid, .project-compact-grid');
+    if (spotlightGrids.length) {
+        const updateCardSpotlight = (e) => {
+            e.currentTarget.querySelectorAll('.bento-item, .bento-card, .project-card').forEach((card) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 card.style.setProperty('--mouse-x', `${x}px`);
                 card.style.setProperty('--mouse-y', `${y}px`);
             });
+        };
+
+        spotlightGrids.forEach((grid) => {
+            grid.addEventListener('mousemove', updateCardSpotlight);
         });
     }
 

@@ -73,7 +73,7 @@
                     <div class="hero-buttons parallax-layer" data-speed="0.2">
                         <a href="about.html" class="btn btn-primary">Conóceme más</a>
                         <a href="assets/descargas/Angel-Cv.pdf" class="btn btn-outline" download>
-                            <i class="fas fa-download" style="margin-right:8px"></i> CV
+                            <i class="fas fa-download btn-icon"></i> CV
                         </a>
                     </div>
                 </div>
@@ -164,20 +164,24 @@
             <section id="work" class="projects">
                 <div class="container">
                     <div class="section-header reveal">
-                        <h2>Trabajo Seleccionado</h2>
+                        <span class="section-kicker">Destacados</span>
+                        <h2>Trabajo <span class="text-gradient">seleccionado</span></h2>
                         <p>Desarrollo freelance, corporativo y proyectos web full stack.</p>
                     </div>
 
                     <div class="bento-grid focus-grid" id="spotlight-grid">
 
-                        <article class="bento-item item-wide reveal" data-tilt data-tilt-glare data-tilt-max-glare="0.05">
+                        <article class="bento-item project-card home-card home-card-lead item-wide reveal item-thb" data-tilt data-tilt-glare data-tilt-max-glare="0.05">
                             <div class="spotlight-overlay"></div>
                             <div class="card-badge badge-private"><i class="fas fa-lock"></i> Privado</div>
 
-                            <div class="bento-content">
-                                <div class="flex-header">
+                            <div class="bento-content project-card-content">
+                                <div class="project-card-header">
                                     <div class="card-icon"><i class="fas fa-building"></i></div>
-                                    <h3>Experiencia en THB Hotels</h3>
+                                    <div>
+                                        <span class="project-meta">Corporativo actual · Frontend & Full Stack</span>
+                                        <h3>Experiencia en THB Hotels</h3>
+                                    </div>
                                 </div>
 
                                 <p>
@@ -212,11 +216,12 @@
                             </div>
                         </article>
 
-                        <article class="bento-item reveal item-rivo" data-tilt data-tilt-glare data-tilt-max-glare="0.15">
+                        <article class="bento-item project-card home-card reveal item-rivo" data-tilt data-tilt-glare data-tilt-max-glare="0.15">
                             <div class="spotlight-overlay"></div>
 
-                            <div class="bento-content">
+                            <div class="bento-content project-card-content">
                                 <div class="card-icon icon-rivo"><i class="fas fa-wallet"></i></div>
+                                <span class="project-meta">Proyecto Fin de Grado · Full Stack</span>
                                 <h3>Rivo</h3>
                                 <p>
                                     Aplicación web de finanzas personales centrada en dashboard, lógica de negocio,
@@ -233,20 +238,21 @@
                                 </div>
 
                                 <div class="bento-actions">
-                                    <a href="https://github.com/Angel-Guiberteau/Rivo" target="_blank" class="link-action">
+                                    <a href="https://github.com/Angel-Guiberteau/Rivo" target="_blank" rel="noopener noreferrer" class="link-action">
                                         <i class="fab fa-github"></i> Visitar Repositorio <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
 
-                            <a href="https://github.com/Angel-Guiberteau/Rivo" target="_blank" class="card-link" aria-label="Ver Rivo"></a>
+                            <a href="https://github.com/Angel-Guiberteau/Rivo" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Ver Rivo"></a>
                         </article>
 
-                        <article class="bento-item reveal" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
+                        <article class="bento-item project-card home-card reveal" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
                             <div class="spotlight-overlay"></div>
 
-                            <div class="bento-content">
+                            <div class="bento-content project-card-content">
                                 <div class="card-icon"><i class="fas fa-city"></i></div>
+                                <span class="project-meta">Juego web · Frontend</span>
                                 <h3>Democratic City</h3>
                                 <p>
                                     Juego multijugador en navegador donde las decisiones de los jugadores impactan en
@@ -261,21 +267,22 @@
                                 </div>
 
                                 <div class="bento-actions">
-                                    <a href="https://github.com/Angel-Guiberteau/DemocraticCity" target="_blank" class="link-action">
+                                    <a href="https://github.com/Angel-Guiberteau/DemocraticCity" target="_blank" rel="noopener noreferrer" class="link-action">
                                         <i class="fab fa-github"></i> Visitar Repositorio <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
 
-                            <a href="https://github.com/Angel-Guiberteau/DemocraticCity" target="_blank" class="card-link" aria-label="Ver Democratic City"></a>
+                            <a href="https://github.com/Angel-Guiberteau/DemocraticCity" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Ver Democratic City"></a>
                         </article>
 
-                        <article class="bento-item item-wide reveal" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
+                        <article class="bento-item project-card home-card home-card-freelance item-wide reveal item-freelance" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
                             <div class="spotlight-overlay"></div>
                             <div class="card-badge badge-freelance">Freelance</div>
 
-                            <div class="bento-content">
+                            <div class="bento-content project-card-content">
                                 <div class="card-icon"><i class="fas fa-gem"></i></div>
+                                <span class="project-meta">Cliente real · Diseño, SEO y desarrollo</span>
                                 <h3>FC Klassic Cars</h3>
                                 <p>
                                     Web para la compraventa y tasación de vehículos de lujo, clásicos y de segunda mano.
@@ -293,13 +300,13 @@
                                 </div>
 
                                 <div class="bento-actions">
-                                    <a href="https://fcklassic.com/" target="_blank" class="link-action">
+                                    <a href="https://fcklassic.com/" target="_blank" rel="noopener noreferrer" class="link-action">
                                         Visitar Web <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
                             </div>
 
-                            <a href="https://fcklassic.com/" target="_blank" class="card-link" aria-label="Ver FC Klassic Cars"></a>
+                            <a href="https://fcklassic.com/" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Ver FC Klassic Cars"></a>
                             <div class="bento-bg-decor"></div>
                         </article>
 

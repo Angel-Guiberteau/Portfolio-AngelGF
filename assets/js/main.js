@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const isTouchViewport = window.matchMedia('(max-width: 768px)').matches;
-    const shouldReduceMotion = reduceMotionQuery.matches || isTouchViewport;
+    const touchViewportQuery = window.matchMedia('(max-width: 768px), (pointer: coarse)');
+    const shouldReduceMotion = reduceMotionQuery.matches;
+    const shouldDisableHeavyMotion = shouldReduceMotion || touchViewportQuery.matches;
 
-    if (shouldReduceMotion) {
+    if (shouldDisableHeavyMotion) {
         document.documentElement.classList.add('reduce-motion');
         document.querySelectorAll('[data-tilt]').forEach((card) => {
             card.removeAttribute('data-tilt');
@@ -12,16 +13,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    if (!shouldReduceMotion && window.Lenis) {
+    if (!shouldReduceMotion && !touchViewportQuery.matches && window.Lenis) {
         const lenis = new Lenis({
-            duration: 0.6,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            duration: 0.65,
+            easing: (t) => 1 - Math.pow(1 - t, 3),
             direction: 'vertical',
             gestureDirection: 'vertical',
-            smooth: true,
-            mouseMultiplier: 1,
+            smoothWheel: true,
+            wheelMultiplier: 1.15,
+            touchMultiplier: 1.35,
             smoothTouch: false,
-            touchMultiplier: 2,
         });
 
         function raf(time) {
@@ -73,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     async function loadNetworkParticles(theme) {
-        if (shouldReduceMotion || !window.tsParticles || !document.getElementById('tsparticles')) {
+        if (shouldDisableHeavyMotion || !window.tsParticles || !document.getElementById('tsparticles')) {
             return;
         }
 
@@ -130,29 +131,67 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const navbar = document.querySelector('.navbar');
     let lastScrollY = window.scrollY;
+    let ticking = false;
 
     if (navbar) {
-        window.addEventListener('scroll', () => {
+        const updateNavbarOnScroll = () => {
             const currentScrollY = window.scrollY;
-            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+            const isScrollingDown = currentScrollY > lastScrollY;
+            const isPastHeroOffset = currentScrollY > 96;
+            const hasMeaningfulDelta = Math.abs(currentScrollY - lastScrollY) > 6;
+
+            navbar.classList.toggle('nav-scrolled', currentScrollY > 8);
+
+            if (isScrollingDown && isPastHeroOffset && hasMeaningfulDelta) {
                 navbar.classList.add('nav-hidden');
-            } else {
+            } else if (!isScrollingDown || currentScrollY < 24) {
                 navbar.classList.remove('nav-hidden');
             }
+
             lastScrollY = currentScrollY;
-        });
+            ticking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateNavbarOnScroll);
+                ticking = true;
+            }
+        }, { passive: true });
     }
 
     const spotlightGrids = document.querySelectorAll('#spotlight-grid, .project-compact-grid');
     if (spotlightGrids.length) {
+        const spotlightRule = (() => {
+            for (const sheet of document.styleSheets) {
+                if (!sheet.href || !sheet.href.includes('/assets/styles/')) {
+                    continue;
+                }
+
+                try {
+                    const ruleIndex = sheet.insertRule(':root { --mouse-x: 50%; --mouse-y: 50%; }', sheet.cssRules.length);
+                    return sheet.cssRules[ruleIndex];
+                } catch {
+                    continue;
+                }
+            }
+
+            return null;
+        })();
+
         const updateCardSpotlight = (e) => {
-            e.currentTarget.querySelectorAll('.bento-item, .bento-card, .project-card').forEach((card) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-            });
+            if (!spotlightRule) {
+                return;
+            }
+
+            const card = e.target.closest('.bento-item, .bento-card, .project-card');
+            if (!card || !e.currentTarget.contains(card)) {
+                return;
+            }
+
+            const rect = card.getBoundingClientRect();
+            spotlightRule.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+            spotlightRule.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
         };
 
         spotlightGrids.forEach((grid) => {
@@ -165,7 +204,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (fabBtn && mobileMenu) {
         const toggleMenu = (e) => {
-            if(e) e.stopPropagation();
+            if (e) e.stopPropagation();
             fabBtn.classList.toggle('active');
             mobileMenu.classList.toggle('open');
         };

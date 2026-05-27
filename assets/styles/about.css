@@ -245,6 +245,97 @@ ul {
     color: var(--text-main);
 }
 
+.language-switch,
+.mobile-language-switch {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    gap: 0;
+    padding: 0.24rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent),
+        var(--surface-muted-soft);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    overflow: hidden;
+}
+
+.language-switch::before,
+.mobile-language-switch::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 0.24rem;
+    left: 0.24rem;
+    width: 36px;
+    height: 28px;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(135deg, var(--primary), var(--primary-active));
+    box-shadow: 0 6px 18px rgba(255, 59, 48, 0.24);
+    transition: transform 0.22s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html[lang="en"] .language-switch::before,
+html[lang="en"] .mobile-language-switch::before {
+    transform: translateX(36px);
+}
+
+.language-option {
+    width: 36px;
+    min-width: 36px;
+    height: 28px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.language-option:hover {
+    color: var(--text-main);
+    transform: translateY(-1px);
+}
+
+.language-option.is-active {
+    color: var(--text-inverse);
+}
+
+.mobile-language-switch {
+    justify-content: center;
+    width: fit-content;
+    margin: 0.25rem auto;
+}
+
+main {
+    transition: opacity 0.18s ease, transform 0.18s ease, filter 0.18s ease;
+}
+
+html.is-language-changing main {
+    opacity: 0.78;
+    transform: translateY(3px);
+    filter: saturate(0.92);
+}
+
+.mobile-nav-menu {
+    transition: opacity 0.18s ease, filter 0.18s ease;
+}
+
+html.is-language-changing .mobile-nav-menu {
+    opacity: 0.78;
+    filter: saturate(0.92);
+}
+
+html.is-language-changing .language-option {
+    pointer-events: none;
+}
+
 .hero-wrapper {
     padding-top: 110px;
     padding-bottom: 50px;
@@ -286,7 +377,7 @@ ul {
     flex-direction: column;
 
     &:hover {
-        transform: translateY(-4px);
+        transform: translateY(-2px);
         box-shadow: var(--shadow-hover);
         border-color: var(--border-primary-soft);
     }

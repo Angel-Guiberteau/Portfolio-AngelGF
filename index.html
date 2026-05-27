@@ -14,8 +14,9 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="Ángel GF | Full Stack Developer">
         <meta name="twitter:description" content="Laravel, frontend, UI/UX, automatización e IA aplicada para productos web útiles.">
-        <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-        <link rel="alternate icon" href="assets/img/ico.ico" type="image/x-icon">
+        <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+        <link rel="icon" href="assets/img/ico.png" type="image/png">
+        <link rel="apple-touch-icon" href="assets/img/ico.png">
         <title>Ángel GF | Full Stack Developer</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,10 +38,15 @@
 
                 <div class="nav-actions">
                     <ul class="nav-links">
-                        <li><a href="projects.html" class="nav-link-hover">Proyectos</a></li>
-                        <li><a href="about.html" class="nav-link-hover">Sobre mí</a></li>
-                        <li><a href="mailto:aguiberteaufranco@gmail.com" class="nav-link-hover">Contacto</a></li>
+                        <li><a href="projects.html" class="nav-link-hover" data-i18n="nav.projects">Proyectos</a></li>
+                        <li><a href="about.html" class="nav-link-hover" data-i18n="nav.about">Sobre mí</a></li>
+                        <li><a href="mailto:aguiberteaufranco@gmail.com" class="nav-link-hover" data-i18n="nav.contact">Contacto</a></li>
                     </ul>
+
+                    <div class="language-switch" role="group" aria-label="Seleccionar idioma">
+                        <button type="button" class="language-option" data-lang-option="es">ES</button>
+                        <button type="button" class="language-option" data-lang-option="en">EN</button>
+                    </div>
 
                     <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
                         <i class="fas fa-sun"></i>
@@ -73,8 +79,8 @@
 
                     <div class="hero-buttons parallax-layer" data-speed="0.2">
                         <a href="about.html" class="btn btn-primary">Conóceme más</a>
-                        <a href="assets/descargas/Angel-Cv.pdf" class="btn btn-outline" download>
-                            <i class="fas fa-download btn-icon"></i> CV
+                        <a href="assets/descargas/Angel-Cv.pdf" class="btn btn-outline" download data-cv-download>
+                            <i class="fas fa-download btn-icon"></i> <span data-i18n="common.cv">CV</span>
                         </a>
                     </div>
                 </div>
@@ -165,7 +171,6 @@
             <section id="work" class="projects">
                 <div class="container">
                     <div class="section-header reveal">
-                        <span class="section-kicker">Destacados</span>
                         <h2>Trabajo <span class="text-gradient">seleccionado</span></h2>
                         <p>Desarrollo freelance, corporativo y proyectos web full stack.</p>
                     </div>
@@ -337,19 +342,23 @@
         <div class="mobile-nav-wrapper">
             <nav class="mobile-nav-menu" id="mobileMenu">
                 <a href="index.html" class="mobile-link">
-                    <i class="fas fa-home"></i> <span>Inicio</span>
+                    <i class="fas fa-home"></i> <span data-i18n="nav.home">Inicio</span>
                 </a>
                 <a href="about.html" class="mobile-link">
-                    <i class="fas fa-user"></i> <span>Sobre mí</span>
+                    <i class="fas fa-user"></i> <span data-i18n="nav.about">Sobre mí</span>
                 </a>
                 <a href="projects.html" class="mobile-link">
-                    <i class="fas fa-code"></i> <span>Proyectos</span>
+                    <i class="fas fa-code"></i> <span data-i18n="nav.projects">Proyectos</span>
                 </a>
                 <a href="mailto:aguiberteaufranco@gmail.com" class="mobile-link">
-                    <i class="fas fa-paper-plane"></i> <span>Contacto</span>
+                    <i class="fas fa-paper-plane"></i> <span data-i18n="nav.contact">Contacto</span>
                 </a>
-                <a href="assets/descargas/Angel-Cv.pdf" download class="mobile-link highlight">
-                    <i class="fas fa-download"></i> <span>CV</span>
+                <div class="mobile-language-switch" role="group" aria-label="Seleccionar idioma">
+                    <button type="button" class="language-option" data-lang-option="es">ES</button>
+                    <button type="button" class="language-option" data-lang-option="en">EN</button>
+                </div>
+                <a href="assets/descargas/Angel-Cv.pdf" download class="mobile-link highlight" data-cv-download>
+                    <i class="fas fa-download"></i> <span data-i18n="common.cv">CV</span>
                 </a>
             </nav>
 

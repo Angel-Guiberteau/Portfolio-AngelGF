@@ -1,2 +1,11 @@
 .DS_Store
 assets/.DS_Store
+
+# Generated profile README assets
+README.md
+assets/readme/*.svg
+
+# CV source assets
+assets/descargas/cv-*.html
+assets/descargas/cv-*.css
+assets/descargas/*.svg
